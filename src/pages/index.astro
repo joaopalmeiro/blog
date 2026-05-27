@@ -14,9 +14,12 @@ import Layout from "../layouts/Base.astro";
     <ul>
       {
         posts.map((post) => (
-          <li class="flex justify-between">
-            <a href={`/${post.id}`}>{post.title}</a>
-            <time datetime={post.createdAt}>{post.createdAt}</time>
+          <li>
+            <a href={`/${post.id}`} class="flex justify-between">
+              {post.title}
+              <span class="sr-only">. Published on: </span>
+              <time class="text-gray-500">{post.createdAt}</time>
+            </a>
           </li>
         ))
       }
