@@ -1,6 +1,8 @@
 # blog
 
-My personal blog.
+João Palmeiro's personal blog.
+
+## Development
 
 Install [fnm](https://github.com/Schniz/fnm) (if necessary).
 

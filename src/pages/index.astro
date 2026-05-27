@@ -1,0 +1,23 @@
+---
+import { posts } from "../data/posts";
+import Layout from "../layouts/Base.astro";
+---
+
+<Layout title="blog" description="João Palmeiro's personal blog.">
+  <header>
+    <h1>blog</h1>
+  </header>
+
+  <main>
+    <ul>
+      {
+        posts.map((post) => (
+          <li>
+            <a href={`/${post.id}`}>{post.title}</a>
+            <time datetime={post.createdAt}>{post.createdAt}</time>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Layout>

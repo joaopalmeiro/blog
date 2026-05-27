@@ -1,0 +1,8 @@
+---
+import { basename } from "node:path";
+
+import { posts } from "../data/posts";
+
+const id = basename(import.meta.url, ".astro");
+const post = posts.find((p) => p.id === id);
+---
