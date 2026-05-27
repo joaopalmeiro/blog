@@ -3,16 +3,18 @@ import { posts } from "../data/posts";
 import Layout from "../layouts/Base.astro";
 ---
 
-<Layout title="blog" description="João Palmeiro's personal blog.">
+<Layout title="Patches" description="João Palmeiro's personal blog.">
   <header>
-    <h1>blog</h1>
+    <h1>Patches</h1>
   </header>
 
   <main>
+    <h2>Posts</h2>
+
     <ul>
       {
         posts.map((post) => (
-          <li>
+          <li class="flex justify-between">
             <a href={`/${post.id}`}>{post.title}</a>
             <time datetime={post.createdAt}>{post.createdAt}</time>
           </li>

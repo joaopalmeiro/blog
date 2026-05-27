@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://blog.joao.town/sitemap-index.xml
+Sitemap: https://patches.joao.town/sitemap-index.xml

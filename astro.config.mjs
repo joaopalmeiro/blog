@@ -13,6 +13,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  site: "https://blog.joao.town",
+  site: "https://patches.joao.town",
   integrations: [sitemap()],
 });

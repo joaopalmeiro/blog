@@ -23,6 +23,8 @@
 - https://marcel.fyi/
 - https://pilcrow.vercel.app/
 - https://samuelkraft.com/
+  - `<time class="tabular-nums text-right shrink-0 text-secondary" datetime="2025-12-10">10 Dec 2025</time>`
+  - https://samuelkraft.com/blog/using-sf-pro-rounded-with-react-native
 - https://chronark.com/
 - https://aacevski.com/
 - https://ekar.site/
