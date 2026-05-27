@@ -1,6 +1,15 @@
 # Notes
 
 - https://docs.astro.build/en/guides/syntax-highlighting/
+- https://fonts.google.com/?sort=date
+- https://fontsource.org/?sort=newest
+- https://vercel.com/font
+- https://vercel.com/font?type=pixel
+- https://pimpmytype.com/font/geist/
+- https://tailwindcss.com/docs/list-style-type
+- https://tailwindcss.com/docs/colors
+- https://www.sarasoueidan.com/
+- https://adrianroselli.com/posts
 
 ## References
 

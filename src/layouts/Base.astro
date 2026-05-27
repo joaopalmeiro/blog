@@ -1,4 +1,7 @@
 ---
+import "@fontsource-variable/geist/wght.css";
+import geistWoff2 from "@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url";
+
 import "../styles/global.css";
 
 const { title, description } = Astro.props;
@@ -30,6 +33,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="sitemap" href="/sitemap-index.xml" />
 
     <meta name="fediverse:creator" content="@joaopalmeiro@ciberlandia.pt" />
+
+    <link rel="preload" as="font" type="font/woff2" href={geistWoff2} crossorigin="anonymous" />
   </head>
 
   <body class="mx-auto max-w-prose px-6 py-12 text-base text-gray-900">

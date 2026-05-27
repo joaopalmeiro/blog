@@ -4,19 +4,24 @@ import Layout from "../layouts/Base.astro";
 ---
 
 <Layout title="Patches" description="João Palmeiro's personal blog.">
-  <header>
-    <h1>Patches</h1>
+  <header class="mb-12">
+    <h1 class="text-xl font-medium">Patches</h1>
   </header>
 
-  <main>
-    <h2>Posts</h2>
+  <main class="flex flex-col gap-2">
+    <h2 class="font-medium">Posts</h2>
 
-    <ul>
+    <ul class="list-outside [&>li:nth-child(even)]:list-['-_'] [&>li:nth-child(odd)]:list-['+_']">
       {
         posts.map((post) => (
           <li>
-            <a href={`/${post.id}`} class="flex justify-between">
-              {post.title}
+            <a
+              href={`/${post.id}`}
+              class="group flex justify-between focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
+            >
+              <span class="underline decoration-gray-700 decoration-dashed underline-offset-4 group-hover:decoration-gray-900 group-hover:decoration-solid group-hover:decoration-2">
+                {post.title}
+              </span>
               <span class="sr-only">. Published on: </span>
               <time class="text-gray-500">{post.createdAt}</time>
             </a>
