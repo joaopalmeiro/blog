@@ -8,8 +8,14 @@
 - https://pimpmytype.com/font/geist/
 - https://tailwindcss.com/docs/list-style-type
 - https://tailwindcss.com/docs/colors
-- https://www.sarasoueidan.com/
-- https://adrianroselli.com/posts
+- https://adrianroselli.com/2024/02/aria-note.html
+- https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/note_role
+- https://www.w3.org/WAI/GL/wiki/Using_HTML5_aside_element#Example_2:_the_%3Caside%3E_Element_with_ARIA
+- https://smolweb.org/specs/element-aside.html
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/header
+- `<ul class="list-outside [&>li:nth-child(even)]:list-['-_'] [&>li:nth-child(odd)]:list-['+_']">`
+- `<aside role="note"> Published on <time datetime={post?.createdAt}>{post?.createdAt}</time>. Last updated on <time datetime={post?.lastUpdatedAt}>{post?.lastUpdatedAt}</time > </aside>`
+- `<span class="sr-only">. Published on: </span>`
 
 ## References
 
@@ -39,6 +45,9 @@
 - https://ekar.site/
 - https://rgllm.com/
 - https://cv.jarocki.me/
+- https://shadcn.com/
+- https://www.sarasoueidan.com/
+- https://adrianroselli.com/posts
 
 ## Snippets
 
