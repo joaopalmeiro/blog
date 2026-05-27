@@ -1,5 +1,7 @@
 # Notes
 
+- https://docs.astro.build/en/guides/syntax-highlighting/
+
 ## References
 
 - https://paco.me/
