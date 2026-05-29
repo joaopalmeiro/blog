@@ -1,4 +1,5 @@
 ---
+import { Code } from "astro:components";
 import { basename } from "node:path";
 
 import { posts } from "../data/posts";
@@ -9,17 +10,24 @@ const id = basename(import.meta.url, ".astro");
 const post = posts.find((p) => p.id === id);
 
 if (!post) throw new Error(`No post found with id "${id}".`);
+
+const extensionsSnippet = `
+{
+  "extensions.autoCheckUpdates": false,
+  "extensions.autoUpdate": false
+}
+`.trim();
 ---
 
 <Layout title="TODO" description="TODO">
   <header class="mb-12">
-    <!-- TODO -->
+    <h1 class="font-medium">Patches</h1>
   </header>
 
   <main>
     <article>
       <header>
-        <h1 class="font-medium">{post.title}</h1>
+        <h1 class="text-xl font-medium">{post.title}</h1>
 
         <p>
           Published on <time datetime={post.createdAt}>{dateFormatter.format(new Date(post.createdAt))}</time>.{
@@ -33,7 +41,15 @@ if (!post) throw new Error(`No post found with id "${id}".`);
           }
         </p>
       </header>
+
       <p>TODO</p>
+
+      <Code
+        code={extensionsSnippet}
+        theme="catppuccin-latte"
+        lang="json"
+        class="border-y border-dashed border-gray-400 p-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
+      />
     </article>
   </main>
 </Layout>

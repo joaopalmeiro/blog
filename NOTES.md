@@ -1,6 +1,11 @@
 # Notes
 
 - https://docs.astro.build/en/guides/syntax-highlighting/
+  - https://shiki.style/themes
+  - https://shiki.style/guide/load-theme
+  - https://textmate-grammars-themes.netlify.app/
+  - https://github.com/withastro/astro/issues/8001
+  - https://docs.astro.build/en/guides/syntax-highlighting/#adding-your-own-shiki-theme
 - https://fonts.google.com/?sort=date
 - https://fontsource.org/?sort=newest
 - https://vercel.com/font
@@ -16,6 +21,7 @@
 - `<ul class="list-outside [&>li:nth-child(even)]:list-['-_'] [&>li:nth-child(odd)]:list-['+_']">`
 - `<aside role="note"> Published on <time datetime={post?.createdAt}>{post?.createdAt}</time>. Last updated on <time datetime={post?.lastUpdatedAt}>{post?.lastUpdatedAt}</time > </aside>`
 - `<span class="sr-only">. Published on: </span>`
+- https://docs.astro.build/en/basics/astro-components/#transferring-slots: `<slot name="head" />`
 
 ## References
 
