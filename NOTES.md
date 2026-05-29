@@ -49,6 +49,16 @@
 - https://www.sarasoueidan.com/
 - https://adrianroselli.com/posts
 
+## Commands
+
+```bash
+mkdir -p ~/Documents/kiro-blog && rsync -a --delete --exclude={'.git','.DS_Store','NOTES.md'} ~/Documents/GitHub/blog/ ~/Documents/kiro-blog
+```
+
+```bash
+kiro ~/Documents/kiro-blog
+```
+
 ## Snippets
 
 - https://www.blog.gov.uk/

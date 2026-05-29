@@ -3,9 +3,12 @@ import { basename } from "node:path";
 
 import { posts } from "../data/posts";
 import Layout from "../layouts/Base.astro";
+import { dateFormatter } from "../utils";
 
 const id = basename(import.meta.url, ".astro");
 const post = posts.find((p) => p.id === id);
+
+if (!post) throw new Error(`No post found with id "${id}".`);
 ---
 
 <Layout title="TODO" description="TODO">
@@ -16,12 +19,18 @@ const post = posts.find((p) => p.id === id);
   <main>
     <article>
       <header>
-        <h1 class="font-medium">{post?.title}</h1>
+        <h1 class="font-medium">{post.title}</h1>
 
         <p>
-          Published on <time datetime={post?.createdAt}>{post?.createdAt}</time>. Last updated on <time
-            datetime={post?.lastUpdatedAt}>{post?.lastUpdatedAt}</time
-          >
+          Published on <time datetime={post.createdAt}>{dateFormatter.format(new Date(post.createdAt))}</time>.{
+            post.lastUpdatedAt && (
+              <>
+                {" "}
+                Last updated on{" "}
+                <time datetime={post.lastUpdatedAt}>{dateFormatter.format(new Date(post.lastUpdatedAt))}</time>.
+              </>
+            )
+          }
         </p>
       </header>
       <p>TODO</p>
