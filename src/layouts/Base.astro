@@ -37,7 +37,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="preload" as="font" type="font/woff2" href={geistWoff2} crossorigin="anonymous" />
   </head>
 
-  <body class="mx-auto max-w-prose px-6 py-12 text-base text-gray-900">
+  <body class="mx-auto max-w-prose px-6 py-12 text-base text-gray-900 selection:bg-gray-900 selection:text-white">
     <slot />
   </body>
 </html>
