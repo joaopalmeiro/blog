@@ -21,7 +21,11 @@ const extensionsSnippet = `
 
 <Layout title="TODO" description="TODO">
   <header class="mb-12">
-    <h1 class="font-medium">Patches</h1>
+    <a
+      class="font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
+      aria-label="Homepage"
+      href="/">Patches</a
+    >
   </header>
 
   <main>
@@ -48,7 +52,7 @@ const extensionsSnippet = `
         code={extensionsSnippet}
         theme="catppuccin-latte"
         lang="json"
-        class="border-y border-dashed border-gray-400 p-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
+        class="border-y border-dashed border-[#9ca0b0] p-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
       />
     </article>
   </main>

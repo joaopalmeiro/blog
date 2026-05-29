@@ -6,6 +6,8 @@
   - https://textmate-grammars-themes.netlify.app/
   - https://github.com/withastro/astro/issues/8001
   - https://docs.astro.build/en/guides/syntax-highlighting/#adding-your-own-shiki-theme
+  - https://www.npmjs.com/package/tm-themes
+  - Colors: https://github.com/catppuccin/catppuccin
 - https://fonts.google.com/?sort=date
 - https://fontsource.org/?sort=newest
 - https://vercel.com/font
@@ -22,6 +24,8 @@
 - `<aside role="note"> Published on <time datetime={post?.createdAt}>{post?.createdAt}</time>. Last updated on <time datetime={post?.lastUpdatedAt}>{post?.lastUpdatedAt}</time > </aside>`
 - `<span class="sr-only">. Published on: </span>`
 - https://docs.astro.build/en/basics/astro-components/#transferring-slots: `<slot name="head" />`
+- https://webaim.org/techniques/skipnav/
+- https://github.com/GoogleChrome/modern-web-guidance-src/blob/8054205dd2d58e2e88a311f239714d3fe9d4f497/guides/accessibility/accessibility/guide.md?plain=1#L22: `- **Provide skip links** prior to repeated content like site headers with navigation or long/infinite lists, so that keyboard users can easily bypass them. Make sure the target is focusable (e.g. `<main id="content" tabindex="-1">`).`
 
 ## References
 
@@ -139,4 +143,20 @@ kiro ~/Documents/kiro-blog
     <a class="govuk-link" href="https://www.blog.gov.uk/all-posts/">See all blog posts</a>
   </p>
 </section>
+```
+
+- https://accessible-astro.incluud.dev/components/skip-link/
+
+```astro
+<SkipLink
+  class="absolute -top-full left-0 z-50 bg-white p-4 text-gray-900 focus:top-0 focus:ring-2 focus:ring-offset-2 focus:outline-none dark:bg-gray-800 dark:text-gray-100"
+/>
+```
+
+```astro
+<a
+  href="#maincontent"
+  class="sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:top-4 focus-visible:left-1/2 focus-visible:-translate-x-1/2 focus-visible:bg-gray-900 focus-visible:px-4 focus-visible:py-2 focus-visible:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
+  >Skip to main content</a
+>
 ```
