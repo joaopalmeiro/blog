@@ -5,6 +5,7 @@ import { basename } from "node:path";
 import { posts } from "../data/posts";
 import Layout from "../layouts/Base.astro";
 import { dateFormatter } from "../utils";
+import HomeIcon from "../components/HomeIcon.astro";
 
 const id = basename(import.meta.url, ".astro");
 const post = posts.find((p) => p.id === id);
@@ -22,9 +23,9 @@ const extensionsSnippet = `
 <Layout title="TODO" description="TODO">
   <header class="mb-12">
     <a
-      class="font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
+      class="inline-flex items-center gap-1 font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
       aria-label="Homepage"
-      href="/">Patches</a
+      href="/"><HomeIcon />Patches</a
     >
   </header>
 
