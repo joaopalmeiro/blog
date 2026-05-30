@@ -27,6 +27,8 @@
 - https://webaim.org/techniques/skipnav/
 - https://github.com/GoogleChrome/modern-web-guidance-src/blob/8054205dd2d58e2e88a311f239714d3fe9d4f497/guides/accessibility/accessibility/guide.md?plain=1#L22: `- **Provide skip links** prior to repeated content like site headers with navigation or long/infinite lists, so that keyboard users can easily bypass them. Make sure the target is focusable (e.g. `<main id="content" tabindex="-1">`).`
 - https://heroicons.com/micro
+  - `class="fill-gray-900"`
+- https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/radialGradient
 
 ## References
 
