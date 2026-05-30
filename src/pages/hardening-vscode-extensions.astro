@@ -20,7 +20,13 @@ const extensionsSnippet = `
 `.trim();
 ---
 
-<Layout title={`${post.title} | Patches`} description="TODO">
+<Layout
+  title={post.title}
+  description={post.description}
+  type="article"
+  publishedTime={post.createdAt}
+  modifiedTime={post.lastUpdatedAt}
+>
   <header class="mb-12">
     <a
       class="inline-flex items-center gap-1 font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"

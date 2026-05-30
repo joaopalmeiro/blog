@@ -29,6 +29,9 @@
 - https://heroicons.com/micro
   - `class="fill-gray-900"`
 - https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/radialGradient
+- https://ogp.me/#type_article
+  - https://ogp.me/#datetime
+  - https://en.wikipedia.org/wiki/ISO_8601
 
 ## References
 
