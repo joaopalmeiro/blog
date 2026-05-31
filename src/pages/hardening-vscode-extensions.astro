@@ -1,23 +1,28 @@
 ---
-import { Code } from "astro:components";
 import { basename } from "node:path";
 
+import CodeSnippet from "../components/CodeSnippet.astro";
+import HomeIcon from "../components/HomeIcon.astro";
 import { posts } from "../data/posts";
 import Layout from "../layouts/Base.astro";
 import { dateFormatter } from "../utils";
-import HomeIcon from "../components/HomeIcon.astro";
+import Link from "../components/Link.astro";
 
 const id = basename(import.meta.url, ".astro");
 const post = posts.find((p) => p.id === id);
 
 if (!post) throw new Error(`No post found with id "${id}".`);
 
-const extensionsSnippet = `
+const config = `
 {
   "extensions.autoCheckUpdates": false,
   "extensions.autoUpdate": false
 }
 `.trim();
+
+const saveCommand = "code --list-extensions --show-versions > vscode_extensions.txt";
+
+const installCommand = "xargs --max-lines=1 code --install-extension < vscode_extensions.txt";
 ---
 
 <Layout
@@ -53,14 +58,34 @@ const extensionsSnippet = `
         </p>
       </header>
 
-      <p>TODO</p>
+      <p>
+        VS Code extensions are <Link
+          url="https://code.visualstudio.com/docs/supporting/faq#_how-do-i-opt-out-of-vs-code-autoupdates"
+          >updated automatically by default</Link
+        >. Although I am careful when installing a new extension, I used to manage them less strictly than project
+        dependencies. Here are the steps for my current workflow:
+      </p>
 
-      <Code
-        code={extensionsSnippet}
-        theme="catppuccin-latte"
-        lang="json"
-        class="border-y border-dashed border-[#9ca0b0] p-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
-      />
+      <h2 class="font-medium">Disable automatic extension updates</h2>
+
+      <p>
+        Add the following settings to the <Link
+          url="https://code.visualstudio.com/docs/configure/settings#_user-settings"
+          >VS Code user (global) settings</Link
+        >:
+      </p>
+
+      <CodeSnippet code={config} lang="json" />
+
+      <h2 class="font-medium">Save a pseudo-lockfile of installed extensions</h2>
+
+      <p>Run the following command:</p>
+
+      <CodeSnippet code={saveCommand} lang="bash" />
+
+      <h2 class="font-medium">Update extensions manually</h2>
+
+      <CodeSnippet code={installCommand} lang="bash" />
     </article>
   </main>
 </Layout>
