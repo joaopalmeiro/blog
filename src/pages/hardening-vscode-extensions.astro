@@ -41,8 +41,8 @@ const installCommand = "xargs --max-lines=1 code --install-extension < vscode_ex
   </header>
 
   <main>
-    <article>
-      <header>
+    <article class="flex flex-col gap-8">
+      <header class="flex flex-col gap-1">
         <h1 class="text-xl font-medium">{post.title}</h1>
 
         <p>
@@ -58,7 +58,7 @@ const installCommand = "xargs --max-lines=1 code --install-extension < vscode_ex
         </p>
       </header>
 
-      <p>
+      <p class="text-pretty">
         VS Code extensions are <Link
           url="https://code.visualstudio.com/docs/supporting/faq#_how-do-i-opt-out-of-vs-code-autoupdates"
           >updated automatically by default</Link
@@ -66,49 +66,57 @@ const installCommand = "xargs --max-lines=1 code --install-extension < vscode_ex
         dependencies. Here are the steps for my current workflow:
       </p>
 
-      <h2 class="font-medium">Disable automatic extension updates</h2>
+      <section class="space-y-4">
+        <h2 class="mb-1 text-lg font-medium">Disable automatic extension updates</h2>
 
-      <p>
-        Add the following settings to the <Link
-          url="https://code.visualstudio.com/docs/configure/settings#_user-settings"
-          >VS Code user (global) settings</Link
-        >:
-      </p>
+        <p class="text-pretty">
+          Add the following settings to the <Link
+            url="https://code.visualstudio.com/docs/configure/settings#_user-settings"
+            >VS Code user (global) settings</Link
+          >:
+        </p>
 
-      <CodeSnippet code={config} lang="json" />
+        <CodeSnippet code={config} lang="json" />
+      </section>
 
-      <h2 class="font-medium">Save a pseudo-lockfile of installed extensions</h2>
+      <section class="space-y-4">
+        <h2 class="mb-1 text-lg font-medium">Save a pseudo-lockfile of installed extensions</h2>
 
-      <p>First, review the installed extensions and uninstall the unused ones. Then run the following command:</p>
+        <p class="text-pretty">
+          First, review the installed extensions and uninstall the unused ones. Then run the following command:
+        </p>
 
-      <CodeSnippet code={saveCommand} lang="bash" />
+        <CodeSnippet code={saveCommand} lang="bash" />
 
-      <p>
-        Keep the generated file somewhere, like in a <Link url="https://github.com/joaopalmeiro/dotfiles"
-          >dotfiles repo</Link
-        >. This file makes it easier to get VS Code up and running after a fresh install (and if you don't use <Link
-          url="https://code.visualstudio.com/docs/configure/settings-sync">Settings Sync</Link
-        >). To do so, run the following command:
-      </p>
+        <p class="text-pretty">
+          Keep the generated file somewhere, like in a <Link url="https://github.com/joaopalmeiro/dotfiles"
+            >dotfiles repo</Link
+          >. This file makes it easier to get VS Code up and running after a fresh install (and if you don't use <Link
+            url="https://code.visualstudio.com/docs/configure/settings-sync">Settings Sync</Link
+          >). To do so, run the following command:
+        </p>
 
-      <CodeSnippet code={installCommand} lang="bash" />
+        <CodeSnippet code={installCommand} lang="bash" />
+      </section>
 
-      <h2 class="font-medium">Update extensions manually</h2>
+      <section class="space-y-4">
+        <h2 class="mb-1 text-lg font-medium">Update extensions manually</h2>
 
-      <p>
-        Run the <i>Extensions: Check for Extension Updates</i> command from the <i>VS Code Command Palette</i> to flag the
-        extensions with available updates. Go through the list, check the repos and other resources for any reported issues,
-        and update them if everything looks good.
-      </p>
+        <p class="text-pretty">
+          Run the <i>Extensions: Check for Extension Updates</i> command from the <i>VS Code Command Palette</i> to flag the
+          extensions with available updates. Go through the list, check the repos and other resources for any reported issues,
+          and update them if everything looks good.
+        </p>
 
-      <p>
-        If the latest version of one of the outdated extensions is less than 7 days old (or whatever <Link
-          url="https://nesbitt.io/2026/03/04/package-managers-need-to-cool-down.html">cooldown period</Link
-        > you follow), open the dropdown menu next to <i>Uninstall</i> and choose <i>Install Specific Version...</i>, or
-        skip it this time.
-      </p>
+        <p class="text-pretty">
+          If the latest version of one of the outdated extensions is less than 7 days old (or whatever <Link
+            url="https://nesbitt.io/2026/03/04/package-managers-need-to-cool-down.html">cooldown period</Link
+          > you follow), open the dropdown menu next to <i>Uninstall</i> and choose <i>Install Specific Version...</i>,
+          or skip it this time.
+        </p>
 
-      <p>Finally, update the pseudo-lockfile and repeat from time to time.</p>
+        <p class="text-pretty">Finally, update the pseudo-lockfile and repeat from time to time.</p>
+      </section>
     </article>
   </main>
 </Layout>

@@ -47,6 +47,9 @@
     - Current: `at_sign`
 - `[font-variant-ligatures:none]` in the `<CodeSnippet />` component to prevent Bash command flags from appearing without spaces separating them with Geist Mono.
 - https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/crossorigin: "Setting the attribute name to an empty value, like `crossorigin` or `crossorigin=""`, is the same as `anonymous`."
+- https://blog.logrocket.com/css-text-wrap-balance-vs-text-wrap-pretty/
+  - https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-wrap
+    - "`pretty`: This is intended for body copy where good typography is favored over performance (for example, when the number of orphans should be kept to a minimum)."
 
 ## References
 
