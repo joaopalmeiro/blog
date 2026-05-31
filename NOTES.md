@@ -32,6 +32,18 @@
 - https://ogp.me/#type_article
   - https://ogp.me/#datetime
   - https://en.wikipedia.org/wiki/ISO_8601
+- https://specification.website/
+  - https://github.com/jdevalk/specification.website
+  - https://docs.astro.build/en/basics/astro-pages/#astro-pages: "A page must produce a full HTML document. If not explicitly included, Astro will add the necessary `<!DOCTYPE html>` declaration (...)"
+  - https://specification.website/spec/performance/speculation-rules/
+  - https://developer.mozilla.org/en-US/docs/Web/API/Speculation_Rules_API
+  - https://specification.website/spec/resilience/monitoring-uptime/
+  - https://specification.website/spec/foundations/feed-discovery/
+- https://github.com/arrowtype/shantell-sans
+  - https://shantellsans.com/process
+- Favicon:
+  - https://pinhead.ink/
+    - Current: `at_sign`
 
 ## References
 

@@ -45,6 +45,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     {type === "article" && modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
     {type === "article" && <meta property="article:author" content="João Palmeiro" />}
 
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
     <link rel="canonical" href={canonicalURL} />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
