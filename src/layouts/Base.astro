@@ -1,8 +1,10 @@
 ---
 import "@fontsource-variable/geist-mono/wght.css";
+import "@fontsource-variable/geist/wght-italic.css";
 import "@fontsource-variable/geist/wght.css";
 
 import geistMonoWoff2 from "@fontsource-variable/geist-mono/files/geist-mono-latin-wght-normal.woff2?url";
+import geistItalicWoff2 from "@fontsource-variable/geist/files/geist-latin-wght-italic.woff2?url";
 import geistWoff2 from "@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url";
 
 import "../styles/global.css";
@@ -54,6 +56,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
     <link rel="preload" as="font" type="font/woff2" href={geistWoff2} crossorigin="anonymous" />
     <link rel="preload" as="font" type="font/woff2" href={geistMonoWoff2} crossorigin="anonymous" />
+    <link rel="preload" as="font" type="font/woff2" href={geistItalicWoff2} crossorigin="anonymous" />
   </head>
 
   <body class="mx-auto max-w-prose px-6 py-12 text-base text-gray-900 selection:bg-gray-900 selection:text-white">

@@ -46,6 +46,7 @@
   - https://pinhead.ink/
     - Current: `at_sign`
 - `[font-variant-ligatures:none]` in the `<CodeSnippet />` component to prevent Bash command flags from appearing without spaces separating them with Geist Mono.
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/crossorigin: "Setting the attribute name to an empty value, like `crossorigin` or `crossorigin=""`, is the same as `anonymous`."
 
 ## References
 
