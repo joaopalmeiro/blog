@@ -45,6 +45,7 @@
 - Favicon:
   - https://pinhead.ink/
     - Current: `at_sign`
+- `[font-variant-ligatures:none]` in the `<CodeSnippet />` component to prevent Bash command flags from appearing without spaces separating them with Geist Mono.
 
 ## References
 

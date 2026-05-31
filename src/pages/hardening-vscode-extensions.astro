@@ -79,13 +79,36 @@ const installCommand = "xargs --max-lines=1 code --install-extension < vscode_ex
 
       <h2 class="font-medium">Save a pseudo-lockfile of installed extensions</h2>
 
-      <p>Run the following command:</p>
+      <p>First, review the installed extensions and uninstall the unused ones. Then run the following command:</p>
 
       <CodeSnippet code={saveCommand} lang="bash" />
 
-      <h2 class="font-medium">Update extensions manually</h2>
+      <p>
+        Keep the generated file somewhere, like in a <Link url="https://github.com/joaopalmeiro/dotfiles"
+          >dotfiles repo</Link
+        >. This file makes it easier to get VS Code up and running after a fresh install (and if you don't use <Link
+          url="https://code.visualstudio.com/docs/configure/settings-sync">Settings Sync</Link
+        >). To do so, run the following command:
+      </p>
 
       <CodeSnippet code={installCommand} lang="bash" />
+
+      <h2 class="font-medium">Update extensions manually</h2>
+
+      <p>
+        Run the <i>Extensions: Check for Extension Updates</i> command from the <i>VS Code Command Palette</i> to flag the
+        extensions with available updates. Go through the list, check the repos and other resources for any reported issues,
+        and update them if everything looks good.
+      </p>
+
+      <p>
+        If the latest version of one of the outdated extensions is less than 7 days old (or whatever <Link
+          url="https://nesbitt.io/2026/03/04/package-managers-need-to-cool-down.html">cooldown period</Link
+        > you follow), open the dropdown menu next to <i>Uninstall</i> and choose <i>Install Specific Version...</i>, or
+        skip it this time.
+      </p>
+
+      <p>Finally, update the pseudo-lockfile and repeat from time to time.</p>
     </article>
   </main>
 </Layout>
