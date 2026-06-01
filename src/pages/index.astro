@@ -1,40 +1,45 @@
 ---
+import Link from "../components/Link.astro";
 import { posts } from "../data/posts";
 import Layout from "../layouts/Base.astro";
 import { dateFormatter } from "../utils";
 ---
 
-<Layout title="Patches" description="João Palmeiro's personal blog.">
+<Layout title="Patches" description="A tech and gaming blog by João Palmeiro.">
   <header class="mb-12">
     <h1 class="text-xl font-medium">Patches</h1>
   </header>
 
-  <main class="flex flex-col gap-1">
-    <h2 class="text-lg font-medium">Posts</h2>
+  <main class="flex flex-col gap-8">
+    <p>A tech and gaming blog by <Link url="https://joao.town/">João Palmeiro</Link>.</p>
 
-    <ul>
-      {
-        posts.map((post, index) => (
-          <li class="relative">
-            <span aria-hidden="true" class="absolute -left-4">
-              {index % 2 === 0 ? "+" : "-"}
-            </span>
+    <section>
+      <h2 class="mb-1 text-lg font-medium">Posts</h2>
 
-            <a
-              href={`/${post.id}`}
-              class="group flex justify-between focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
-            >
-              <span class="underline decoration-gray-700 decoration-dashed underline-offset-4 group-hover:decoration-gray-900 group-hover:decoration-solid group-hover:decoration-2">
-                {post.title}
+      <ul>
+        {
+          posts.map((post, index) => (
+            <li class="relative">
+              <span aria-hidden="true" class="absolute -left-4">
+                {index % 2 === 0 ? "+" : "-"}
               </span>
-              <span class="sr-only">. Published on </span>
-              <time class="text-gray-500" datetime={post.createdAt}>
-                {dateFormatter.format(new Date(post.createdAt))}
-              </time>
-            </a>
-          </li>
-        ))
-      }
-    </ul>
+
+              <a
+                href={`/${post.id}`}
+                class="group flex justify-between focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
+              >
+                <span class="underline decoration-gray-700 decoration-dashed underline-offset-4 group-hover:decoration-gray-900 group-hover:decoration-solid group-hover:decoration-2">
+                  {post.title}
+                </span>
+                <span class="sr-only">. Published on </span>
+                <time class="text-gray-500" datetime={post.createdAt}>
+                  {dateFormatter.format(new Date(post.createdAt))}
+                </time>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
   </main>
 </Layout>

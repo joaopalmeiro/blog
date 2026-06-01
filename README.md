@@ -1,6 +1,6 @@
 # Patches
 
-João Palmeiro's personal blog.
+A tech and gaming blog by João Palmeiro.
 
 ## Development
 
