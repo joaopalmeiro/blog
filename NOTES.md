@@ -50,6 +50,16 @@
 - https://blog.logrocket.com/css-text-wrap-balance-vs-text-wrap-pretty/
   - https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-wrap
     - "`pretty`: This is intended for body copy where good typography is favored over performance (for example, when the number of orphans should be kept to a minimum)."
+- https://www.digitalaccesstraining.com/pages/articles?p=how-to-write-accessible-dates
+  - "How to write accessible dates"
+    - "In most instances, write the date using the day-month-year sequence with the full month name spelled out."
+    - For example, "8 May 2026".
+  - "When to include the day of the week"
+    - "For events, meetings, or any date where someone needs to plan ahead, adding the day of the week reduces the mental effort involved."
+    - "You don't need to include a comma or any other punctuation between the day and the date."
+  - "Is it ever ok to use numeric dates?"
+    - "Data in a table or chart. When space is tight and dates appear in columns alongside other data, a consistent numeric format like "8/05/2026" can aid scannability. The repetitive structure of a table provides enough context that the format becomes predictable."
+    - "Date input fields in a form."
 
 ## References
 
