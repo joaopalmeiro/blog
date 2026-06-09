@@ -1,0 +1,26 @@
+---
+import type { Post } from "../data/posts";
+import { dateFormatter } from "../utils";
+
+interface Props {
+  post: Post;
+}
+
+const { post } = Astro.props;
+---
+
+<header class="flex flex-col gap-1">
+  <h1 class="text-xl font-medium">{post.title}</h1>
+
+  <p>
+    Published on <time datetime={post.createdAt}>{dateFormatter.format(new Date(post.createdAt))}</time>.{
+      post.lastUpdatedAt && (
+        <>
+          {" "}
+          Last updated on{" "}
+          <time datetime={post.lastUpdatedAt}>{dateFormatter.format(new Date(post.lastUpdatedAt))}</time>.
+        </>
+      )
+    }
+  </p>
+</header>

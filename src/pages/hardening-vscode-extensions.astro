@@ -1,12 +1,12 @@
 ---
 import { basename } from "node:path";
 
+import ArticleHeader from "../components/ArticleHeader.astro";
 import CodeSnippet from "../components/CodeSnippet.astro";
 import Link from "../components/Link.astro";
 import PostHeader from "../components/PostHeader.astro";
 import { posts } from "../data/posts";
 import Layout from "../layouts/Base.astro";
-import { dateFormatter } from "../utils";
 
 const id = basename(Astro.url.pathname);
 const post = posts.find((p) => p.id === id);
@@ -36,21 +36,7 @@ const installCommand = "xargs --max-lines=1 code --install-extension < vscode_ex
 
   <main>
     <article class="flex flex-col gap-8">
-      <header class="flex flex-col gap-1">
-        <h1 class="text-xl font-medium">{post.title}</h1>
-
-        <p>
-          Published on <time datetime={post.createdAt}>{dateFormatter.format(new Date(post.createdAt))}</time>.{
-            post.lastUpdatedAt && (
-              <>
-                {" "}
-                Last updated on{" "}
-                <time datetime={post.lastUpdatedAt}>{dateFormatter.format(new Date(post.lastUpdatedAt))}</time>.
-              </>
-            )
-          }
-        </p>
-      </header>
+      <ArticleHeader post={post} />
 
       <p class="text-pretty">
         VS Code extensions are <Link

@@ -1,15 +1,21 @@
 ---
 import { basename } from "node:path";
 
+import ArticleHeader from "../components/ArticleHeader.astro";
+import CodeSnippet from "../components/CodeSnippet.astro";
+import Link from "../components/Link.astro";
 import PostHeader from "../components/PostHeader.astro";
 import { posts } from "../data/posts";
 import Layout from "../layouts/Base.astro";
-import { dateFormatter } from "../utils";
 
 const id = basename(Astro.url.pathname);
 const post = posts.find((p) => p.id === id);
 
 if (!post) throw new Error(`No post found with id "${id}".`);
+
+const pkgCommand = "sudo apt update && sudo apt install qtbase5-dev";
+
+const scannerCommand = "epsonscan2";
 ---
 
 <Layout
@@ -23,21 +29,36 @@ if (!post) throw new Error(`No post found with id "${id}".`);
 
   <main>
     <article class="flex flex-col gap-8">
-      <header class="flex flex-col gap-1">
-        <h1 class="text-xl font-medium">{post.title}</h1>
+      <ArticleHeader post={post} />
 
-        <p>
-          Published on <time datetime={post.createdAt}>{dateFormatter.format(new Date(post.createdAt))}</time>.{
-            post.lastUpdatedAt && (
-              <>
-                {" "}
-                Last updated on{" "}
-                <time datetime={post.lastUpdatedAt}>{dateFormatter.format(new Date(post.lastUpdatedAt))}</time>.
-              </>
-            )
-          }
+      <div class="space-y-4">
+        <p class="text-pretty">
+          First, ensure that the <Link
+            url="https://download-center.epson.com/f/module/6ea06a0a-3010-4360-926f-b81554132eb1/overview/epsonscan2_e_1.1.pdf"
+            >qtbase5-dev package</Link
+          > is installed:
         </p>
-      </header>
+
+        <CodeSnippet code={pkgCommand} lang="bash" />
+
+        <p class="text-pretty">
+          Next, download the <Link
+            url="https://download-center.epson.com/softwares/?device_id=Perfection+V39II&region=PT&os=DEBX64&language=en"
+            >Epson Scan2 driver</Link
+          >. Once you have the file, unzip it, open the folder, right-click on the <code>install.sh</code> file, and <i
+            >Run as a Program</i
+          >.
+        </p>
+
+        <p class="text-pretty">
+          The Epson Perfection V39 II scanner is ready to use. To test the scanner, connect it and run the following
+          command:
+        </p>
+
+        <CodeSnippet code={scannerCommand} lang="bash" />
+
+        <p class="text-pretty">These steps were tested on Ubuntu 26.04.</p>
+      </div>
     </article>
   </main>
 </Layout>
