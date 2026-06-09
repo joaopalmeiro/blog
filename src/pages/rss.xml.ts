@@ -8,6 +8,14 @@ export function GET(context: APIContext): Promise<Response> {
     title: "Patches",
     description: "A tech and gaming blog by João Palmeiro.",
     site: context.site!,
+    xmlns: {
+      atom: "http://www.w3.org/2005/Atom",
+    },
+    customData: [
+      "<language>en-us</language>",
+      `<generator>${context.generator}</generator>`,
+      `<atom:link href="${new URL("rss.xml", context.site)}" rel="self" type="application/rss+xml" />`,
+    ].join(""),
     items: posts.map((post) => ({
       title: post.title,
       pubDate: new Date(post.createdAt),
@@ -15,6 +23,5 @@ export function GET(context: APIContext): Promise<Response> {
       link: `/${post.id}/`,
       author: "joaopalmeiro@proton.me (João Palmeiro)",
     })),
-    customData: "<language>en-us</language>",
   });
 }

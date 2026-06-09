@@ -71,6 +71,12 @@
 - https://www.rssboard.org/rss-specification
   - https://validator.w3.org/feed/docs/
   - https://www.rssboard.org/rss-validator/
+  - https://www.rssboard.org/files/sample-rss-2.xml
+  - https://www.rssboard.org/rss-validator/docs/warning/MissingAtomSelfLink.html
+- https://gsong.dev/articles/astro-feed-unified/
+  - https://github.com/jpmonette/feed
+- https://github.com/withastro/astro/blob/ca26d0e233002cde049e212507270cd80bec9350/packages/astro/src/core/constants.ts#L4: `export const ASTRO_VERSION = process.env.PACKAGE_VERSION ?? 'development';` + `export const ASTRO_GENERATOR = `Astro v${ASTRO_VERSION}`;`
+  - https://github.com/withastro/astro/blob/astro%405.16.11/packages/astro/package.json#L72
 
 ## References
 
