@@ -3,6 +3,8 @@ import Link from "../components/Link.astro";
 import { posts } from "../data/posts";
 import Layout from "../layouts/Base.astro";
 import { dateFormatter } from "../utils";
+
+const sortedPosts = posts.toSorted((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
 ---
 
 <Layout title="Patches" description="A tech and gaming blog by João Palmeiro.">
@@ -16,12 +18,12 @@ import { dateFormatter } from "../utils";
     <section>
       <h2 class="mb-1 text-lg font-medium">Posts</h2>
 
-      <ul>
+      <ul class="space-y-2">
         {
-          posts.map((post, index) => (
+          sortedPosts.map((post, index) => (
             <li class="relative">
               <span aria-hidden="true" class="absolute -left-4">
-                {index % 2 === 0 ? "+" : "-"}
+                {index % 2 === 0 ? "-" : "+"}
               </span>
 
               <a

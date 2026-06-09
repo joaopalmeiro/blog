@@ -17,6 +17,6 @@ export const posts: Post[] = [
     id: "using-epson-perfection-v39ii-scanner-ubuntu",
     title: "Using the Epson Perfection V39 II scanner on Ubuntu",
     description: "How to install the required software to start scanning files.",
-    createdAt: "",
-  }
+    createdAt: "2026-06-09",
+  },
 ];

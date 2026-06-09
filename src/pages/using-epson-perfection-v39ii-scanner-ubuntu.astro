@@ -1,0 +1,43 @@
+---
+import { basename } from "node:path";
+
+import PostHeader from "../components/PostHeader.astro";
+import { posts } from "../data/posts";
+import Layout from "../layouts/Base.astro";
+import { dateFormatter } from "../utils";
+
+const id = basename(Astro.url.pathname);
+const post = posts.find((p) => p.id === id);
+
+if (!post) throw new Error(`No post found with id "${id}".`);
+---
+
+<Layout
+  title={post.title}
+  description={post.description}
+  type="article"
+  publishedTime={post.createdAt}
+  modifiedTime={post.lastUpdatedAt}
+>
+  <PostHeader />
+
+  <main>
+    <article class="flex flex-col gap-8">
+      <header class="flex flex-col gap-1">
+        <h1 class="text-xl font-medium">{post.title}</h1>
+
+        <p>
+          Published on <time datetime={post.createdAt}>{dateFormatter.format(new Date(post.createdAt))}</time>.{
+            post.lastUpdatedAt && (
+              <>
+                {" "}
+                Last updated on{" "}
+                <time datetime={post.lastUpdatedAt}>{dateFormatter.format(new Date(post.lastUpdatedAt))}</time>.
+              </>
+            )
+          }
+        </p>
+      </header>
+    </article>
+  </main>
+</Layout>
