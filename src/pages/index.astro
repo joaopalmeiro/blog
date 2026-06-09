@@ -28,7 +28,7 @@ const sortedPosts = posts.toSorted((a, b) => new Date(b.createdAt).getTime() - n
 
               <a
                 href={`/${post.id}`}
-                class="group flex justify-between focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
+                class="group flex flex-col gap-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 sm:flex-row sm:justify-between sm:gap-0"
               >
                 <span class="underline decoration-gray-700 decoration-dashed underline-offset-4 group-hover:decoration-gray-900 group-hover:decoration-solid group-hover:decoration-2">
                   {post.title}

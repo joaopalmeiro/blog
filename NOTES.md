@@ -78,6 +78,7 @@
 - https://github.com/withastro/astro/blob/ca26d0e233002cde049e212507270cd80bec9350/packages/astro/src/core/constants.ts#L4: `export const ASTRO_VERSION = process.env.PACKAGE_VERSION ?? 'development';` + `export const ASTRO_GENERATOR = `Astro v${ASTRO_VERSION}`;`
   - https://github.com/withastro/astro/blob/astro%405.16.11/packages/astro/package.json#L72
 - https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/code
+- https://tailwindcss.com/docs/flex-shrink#preventing-items-from-shrinking: `shrink-0`
 
 ## References
 
