@@ -13,4 +13,10 @@ export const posts: Post[] = [
     description: "My approach to managing VS Code extensions.",
     createdAt: "2026-05-31",
   },
+  {
+    id: "using-epson-perfection-v39ii-scanner-ubuntu",
+    title: "Using the Epson Perfection V39 II scanner on Ubuntu",
+    description: "How to install the required software to start scanning files.",
+    createdAt: "",
+  }
 ];
