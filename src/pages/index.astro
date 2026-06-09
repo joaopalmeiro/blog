@@ -22,7 +22,7 @@ const sortedPosts = posts.toSorted((a, b) => new Date(b.createdAt).getTime() - n
         {
           sortedPosts.map((post, index) => (
             <li class="relative">
-              <span aria-hidden="true" class="absolute -left-4">
+              <span aria-hidden="true" class="absolute -left-4 font-mono">
                 {index % 2 === 0 ? "-" : "+"}
               </span>
 
