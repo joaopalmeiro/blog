@@ -60,6 +60,17 @@
   - "Is it ever ok to use numeric dates?"
     - "Data in a table or chart. When space is tight and dates appear in columns alongside other data, a consistent numeric format like "8/05/2026" can aid scannability. The repetitive structure of a table provides enough context that the format becomes predictable."
     - "Date input fields in a form."
+- https://docs.astro.build/en/recipes/rss/
+  - https://docs.astro.build/en/recipes/rss/#generating-items
+  - https://docs.astro.build/en/recipes/rss/#including-full-post-content
+  - https://docs.astro.build/en/recipes/rss/#removing-trailing-slashes
+  - https://docs.astro.build/en/recipes/rss/#adding-a-stylesheet
+    - https://github.com/genmon/aboutfeeds/blob/main/tools/pretty-feed-v3.xsl
+  - https://github.com/withastro/astro/tree/main/packages/astro-rss
+    - https://github.com/withastro/astro/blob/ca26d0e233002cde049e212507270cd80bec9350/packages/astro-rss/src/index.ts#L233: `item.pubDate = result.pubDate.toUTCString();`
+- https://www.rssboard.org/rss-specification
+  - https://validator.w3.org/feed/docs/
+  - https://www.rssboard.org/rss-validator/
 
 ## References
 

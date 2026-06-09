@@ -17,6 +17,7 @@
     "format": "prettier . --write"
   },
   "dependencies": {
+    "@astrojs/rss": "4.0.18",
     "@astrojs/sitemap": "3.7.2",
     "@fontsource-variable/geist": "5.2.9",
     "@fontsource-variable/geist-mono": "5.2.8",
