@@ -1,0 +1,42 @@
+---
+import { basename } from "node:path";
+
+import ArticleHeader from "../components/ArticleHeader.astro";
+import CodeSnippet from "../components/CodeSnippet.astro";
+import PostHeader from "../components/PostHeader.astro";
+import { posts } from "../data/posts";
+import Layout from "../layouts/Base.astro";
+
+const id = basename(Astro.url.pathname);
+const post = posts.find((p) => p.id === id);
+
+if (!post) throw new Error(`No post found with id "${id}".`);
+
+const trashCommand = "trash -v ~/.kiro/logs/* ~/.kiro/sessions/* ~/.kiro/session-index/*.jsonl";
+const rmCommand = "rm -rfv ~/.kiro/logs/* ~/.kiro/sessions/* ~/.kiro/session-index/*.jsonl";
+---
+
+<Layout
+  title={post.title}
+  description={post.description}
+  type="article"
+  publishedTime={post.createdAt}
+  modifiedTime={post.lastUpdatedAt}
+>
+  <PostHeader />
+
+  <main>
+    <article class="flex flex-col gap-8">
+      <ArticleHeader post={post} />
+      <div class="space-y-4">
+        <p class="text-pretty">Run the following command to move all files to the Bin folder:</p>
+
+        <CodeSnippet code={trashCommand} lang="bash" />
+
+        <p class="text-pretty">To permanently delete them:</p>
+
+        <CodeSnippet code={rmCommand} lang="bash" />
+      </div>
+    </article>
+  </main>
+</Layout>

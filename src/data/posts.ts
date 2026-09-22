@@ -19,4 +19,10 @@ export const posts: Post[] = [
     description: "How to install the required software to start scanning files.",
     createdAt: "2026-06-09",
   },
+  {
+    id: "clearing-kiro-sessions-logs",
+    title: "Clearing Kiro sessions and logs on macOS",
+    description: "A command to quickly delete all data.",
+    createdAt: "2026-09-22",
+  },
 ];
